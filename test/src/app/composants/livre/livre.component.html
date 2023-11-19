@@ -1,0 +1,7 @@
+<div>
+    <label for="category">Catégorie</label>
+    <select name="category" formControlName="category" (change)="onSelect($event.target.value)">
+      <option [ngValue]="Category.All">Toutes</option>
+      <option *ngFor="let category of categories" [ngValue]="category">{{ category | capitalize }}</option>
+    </select>
+</div>

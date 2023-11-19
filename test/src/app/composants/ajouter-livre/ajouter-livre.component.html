@@ -1,0 +1,32 @@
+<div class="container">
+    <h3>Ajout d'un livre</h3>
+    <form [formGroup]="livreForm" (ngSubmit)="onSubmitForm()">
+        <div>
+            <label> Identifiant du livre </label>
+            <input type="number" name="id" formControlName="id">
+        </div>
+        <div>
+            <label>Titre</label>
+            <input type="text" name="titre" formControlName="titre">
+        </div>
+        <div>
+            <label>Auteur</label>
+            <input type="text" name="auteur" formControlName="auteur">
+        </div>
+        <div>
+            <label>Catégorie</label>
+            <select name="categorie" formControlName="categorie">
+                <option *ngFor="let c of lescategories" [value]="c">{{c}}</option>
+            </select>
+        </div>
+        <div>
+            <label>Prix</label>
+            <input type="number" name="prix" formControlName="prix"|currency="$">
+        </div>
+        <input type="submit" value="Ajouter" class="btn btn-success">
+        <input type="button" value="Effacer" (click)="onResetForm()" class="btn btn-warning">
+    </form>
+    <div class="container mt-5">
+        {{ livres | json }}
+    </div>
+</div>

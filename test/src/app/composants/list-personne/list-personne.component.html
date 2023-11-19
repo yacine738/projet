@@ -1,0 +1,9 @@
+<div class="container">
+    <h3>Liste des personnes</h3>
+  
+    <ul>
+      <li *ngFor="let p of personnes ">
+        {{ p.cin }} - {{ p.nom }} - {{ p.prenom }} - {{ p.adresse }} - {{ p.mail }} - {{ p.telephone }} - {{ p.dateNaissance }} - {{ p.affiliation.departement }}
+      </li>
+    </ul>
+  </div>
